@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,6 +29,8 @@ public class BonusStudiesChecker {
 	
 	private static final Logger log = LoggerFactory.getLogger(BonusStudiesChecker.class);
 	
+	//Checks for studies every 10 minutes
+	@Scheduled(fixedDelay = 300000)
 	public void checkForStudies() {
 		ArrayList<String> studies = scraper.findStudies();
 		

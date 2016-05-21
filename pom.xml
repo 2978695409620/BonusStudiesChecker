@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>scraper</groupId>
 	<artifactId>scraper</artifactId>
-	<version>0.0.3</version>
+	<version>1.0.0</version>
 	<name>Sona Studies Checker</name>
 	<dependencies>
 		<dependency>
