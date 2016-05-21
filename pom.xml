@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>scraper</groupId>
 	<artifactId>scraper</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3</version>
 	<name>Sona Studies Checker</name>
 	<dependencies>
 		<dependency>
@@ -50,6 +50,11 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>5.1.0.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.5.0-b01</version>
 		</dependency>
 	</dependencies>
 	<build>

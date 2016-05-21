@@ -22,7 +22,8 @@ public class WLUBonusSiteScraper {
 	@Value("${password}")
 	private String password;
 	
-	private String siteUrl = "https://wlu-ls.sona-systems.com";
+	@Value("${site.url}")
+	private String siteUrl;
 	
 	private static final Logger log = LoggerFactory.getLogger(WLUBonusSiteScraper.class);
 	

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import mail.Mailer;
 import persistence.model.Study;
 import persistence.repository.StudiesRepository;
 import scraper.WLUBonusSiteScraper;
@@ -22,17 +23,24 @@ public class BonusStudiesChecker {
 	@Autowired
 	private WLUBonusSiteScraper scraper;
 	
+	@Autowired
+	private Mailer mailer;
+	
 	private static final Logger log = LoggerFactory.getLogger(BonusStudiesChecker.class);
 	
 	public void checkForStudies() {
 		ArrayList<String> studies = scraper.findStudies();
 		
-		for (String s: studies) {
-			if (repository.countByName(s) == 0) {
+		for (String studyName: studies) {
+			if (repository.countByName(studyName) == 0) {
 				Study study = new Study();
-				study.setName(s);
+				study.setName(studyName);
+				
 				log.info("Saving new study '{}' to database", study);
 				repository.save(study);
+				
+				log.info("Notifying mail recipients");
+				mailer.notifyRecipients(studyName);
 			}
 		}
 	}
