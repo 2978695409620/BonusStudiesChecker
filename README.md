@@ -16,7 +16,7 @@ Set database configuration in database.properties
 
 Set mail configuration in application.properties
 
-To run:
+How To Run:
 
 mvn clean package
 
