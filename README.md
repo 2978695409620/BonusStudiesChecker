@@ -13,6 +13,7 @@ create table Studies (id INT NOT NULL AUTO_INCREMENT,
                       PRIMARY KEY(id));
                       
 Set database configuration in database.properties
+
 Set mail configuration in application.properties
 
 To run:
