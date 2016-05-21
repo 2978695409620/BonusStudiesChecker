@@ -2,14 +2,14 @@ package main;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import checker.BonusStudiesChecker;
 import config.AppConfiguration;
-import scraper.WLUBonusChecker;
 
 public class AppMain {
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
 		
-		WLUBonusChecker checker = context.getBean(WLUBonusChecker.class);
+		BonusStudiesChecker checker = context.getBean(BonusStudiesChecker.class);
 		checker.checkForStudies();
 		
 		context.close();

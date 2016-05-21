@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class WLUBonusChecker {
+public class WLUBonusSiteScraper {
 
 	@Value("${userID}")
 	private String userID;
@@ -24,9 +24,9 @@ public class WLUBonusChecker {
 	
 	private String siteUrl = "https://wlu-ls.sona-systems.com";
 	
-	private static final Logger log = LoggerFactory.getLogger(WLUBonusChecker.class);
+	private static final Logger log = LoggerFactory.getLogger(WLUBonusSiteScraper.class);
 	
-	public ArrayList<String> checkForStudies() {
+	public ArrayList<String> findStudies() {
 		
 		ArrayList<String> results = new ArrayList<String>();
 		

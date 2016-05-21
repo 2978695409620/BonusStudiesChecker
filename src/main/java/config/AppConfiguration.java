@@ -6,7 +6,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
-@ComponentScan(basePackages = {"scraper"})
+@ComponentScan(basePackages = {"scraper",
+							   "checker",
+							   "config"})
 public class AppConfiguration {
 
 	@Bean
