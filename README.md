@@ -16,6 +16,9 @@ Set database configuration in database.properties
 Set mail configuration in application.properties
 
 To run:
+
 mvn clean package
+
 cd target
+
 java -jar scraper-1.0.0.jar
